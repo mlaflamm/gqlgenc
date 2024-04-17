@@ -12,7 +12,8 @@ type GenerateConfig struct {
 	ClientInterfaceName *string `yaml:"clientInterfaceName,omitempty"`
 	OmitEmptyTypes      *bool   `yaml:"omitEmptyTypes,omitempty"`
 	// if true, used client v2 in generate code
-	ClientV2 bool `yaml:"clientV2,omitempty"`
+	ClientV2                   bool  `yaml:"clientV2,omitempty"`
+	StructFieldsAlwaysPointers *bool `yaml:"struct_fields_always_pointers,omitempty"`
 }
 
 func (c *GenerateConfig) ShouldGenerateClient() bool {
