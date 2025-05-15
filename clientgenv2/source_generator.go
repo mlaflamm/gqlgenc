@@ -349,6 +349,7 @@ func (r *SourceGenerator) NewResponseField(selection ast.Selection, typeName str
 			Name:             selection.Name,
 			Type:             typ,
 			IsFragmentSpread: true,
+			Tags:             []string{fmt.Sprintf(`graphql:"... on %s"`, selection.Definition.TypeCondition)},
 			ResponseFields:   fieldsResponseFields,
 		}
 
